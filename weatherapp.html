@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        #city {
+            width: 130px;
+        }
+
+        .input {
+            position: relative;
+        }
+
+        .input::before {
+            content: "Enter City: ";
+            position: absolute;
+            margin-left: -75px;
+            font-size: 0.9em;
+            padding: 2px 0;
+        }
+
+        #weather-display {
+            width: 200px;
+            text-align: left;
+            word-wrap: break-word;
+            margin: 0 auto;
+            font-size: .9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <br>
+    <!-- <label for="city">Enter City: </label> -->
+    <div class="input">
+        <input type="text" id="city" value="Sudan" oninput="enableButton()">
+        <button onclick="getWeather()" id="button">Search</button>
+    </div>
+    <br>
+    <div id="weather-display"></div>
+
+    <script>
+        const apiKey = '2f34e21a3b5114df4082fd041726e330'
+        const weatherDisplay = document.getElementById('weather-display')
+        const button = document.getElementById('button')
+
+        function getWeather() {
+            button.disabled = true
+            weatherDisplay.innerHTML = ''
+            const city = document.getElementById('city').value
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+
+            if(city === '') alert("No city provided")
+
+            fetch(apiUrl)
+            .catch(error => {alert("Couldn't get weather details. Try again."); button.disabled = false})
+            .then(res => res.json())
+            .then(data => {displayWeather(data); console.log(data)})
+        }
+
+        function displayWeather(data) {
+            const city = data.name
+            button.disabled = false
+            console.log(data)
+            if(data.cod == 404) alert("Cannot find the weather details of " + city)
+            else {
+                const [temperature, description] = [data.main.temp, data.weather[0].description] 
+
+                weatherDisplay.innerHTML = `<h2> ${city} </h2><p>Description: ${description}</p>Temperature: ${~~(temperature-273.15)}&deg;C`
+            }
+        }
+
+        function enableButton() {
+            button.disabled = false
+        }
+    </script>
+</body>
+</html>

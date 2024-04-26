@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color picker</title>
+    <style>
+        body {
+            font: 0.9rem sans-serif;
+            text-align: center;
+        }
+
+        canvas {
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        div {
+            width: 300px;
+            margin: 0 auto;
+            text-wrap: wrap;
+            font-size: .9rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .card {
+            width: 60px;
+            height: 50px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            flex: 0 0 calc(20.33% - 10px);
+            transition: all ease;
+        }
+
+        #color-cards {
+            width: 450px;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-shadow: 0 0 15px rgba(161, 161, 161, 0.527);
+            border-radius: 5px;
+        }
+
+        .active {
+            outline: 2px solid blue;
+        }
+
+        .how-to {
+            padding: 20px;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            z-index: -100;
+        }
+
+        .how-to ol {
+            text-align: left;
+        }
+
+        .how-to ol li {
+            line-height: 1.5;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .how-to {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Color <i style="color: rgb(110, 110, 110)">Picker</i></h1>
+    <div>Click on a particular region to obtain color
+    </div>
+    <canvas width="300" height="300" id="canvas"></canvas>
+    <br>
+    <label for="color">Hue: </label>
+    <input type="text" id="color" value="blue">
+    <button id="btn">Change</button>
+    <br>
+    <br>
+    <div id="color-cards"></div>
+
+    <div class="how-to">
+        <h1>How-<i>To</i></h1>
+        <ol>
+            <li>Select a color card at the bottom of the page</li>
+            <li>Enter the hue of the color you want</li>
+            <li>Hit the Enter key or click on the Change button</li>
+            <li>Click on the color palette to obtain color of choice.</li>
+        </ol>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+</html>

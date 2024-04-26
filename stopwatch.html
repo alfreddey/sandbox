@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="margin: 10%; font-size: 52px;">
+    <div class="container">
+        <div id="stopwatch">
+            00 : 00 : 00 
+        </div>
+        <br>
+        <div class="buttons">
+            <button id="start-btn" onclick="startWatch()">Start</button>
+            <button id="stop-btn" onclick="stopWatch()">Stop</button>
+            <button id="reset-btn" onclick="resetWatch()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let startTime
+        let elapsedPausedTime = 0
+        let interval
+
+        function startWatch() {
+            if(!interval) {
+                startTime = new Date().getTime() - elapsedPausedTime
+                interval = setInterval(updateWatch, 1000)
+            }
+        }
+
+        function stopWatch() {
+            interval = clearInterval(interval)
+            elapsedPausedTime = new Date().getTime() - startTime
+        }
+
+        function resetWatch() {
+            stopWatch()
+            elapsedPausedTime = 0
+            document.getElementById("stopwatch").innerHTML = "00 : 00 : 00"
+        }
+
+        function updateWatch() {
+            let currentTime = new Date().getTime()
+            let elapsedTime = currentTime - startTime
+            let seconds = Math.floor(elapsedTime/1000) % 60
+            let minutes = Math.floor(elapsedTime/1000/60) % 60
+            let hour = Math.floor(elapsedTime/1000/60/60)
+            let displayTime = pad(hour) + " : " + pad(minutes) + ": " + pad(seconds)
+            document.getElementById("stopwatch").innerHTML = displayTime
+        }
+
+        function pad(number) {
+            return (number < 10 ? "0" : "") + number
+        }
+    </script>
+</body>
+</html>
