@@ -1,0 +1,147 @@
+html {    
+    scrollbar-width: none;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+article {
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    margin: 0 auto;
+    column-gap: 20px;
+}
+
+aside {
+    position: relative;
+    min-width: 150px;
+    width: 180px;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 90%;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+}
+
+.note-heading {
+    display: block;
+    padding: 5px 8px;
+    letter-spacing: .5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slot-container {
+    position: relative;
+    max-height: calc(100% - 50px);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.note-slot {
+    border: 1px solid #bbb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.header {
+    user-select: none;
+    text-align: right;
+}
+
+.header button, #writeBtn {
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.note-slot #key {
+    position: absolute;
+    left: 10px;
+    color: #bbb;
+    overflow: hidden;
+    display: inline-block;
+    width: 40px;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+
+.slot-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #eee;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+.slot-footer button {
+    width: 100%;
+    padding: 4px 0;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+}
+
+#main-body input {
+    font-weight: bold;
+    font-size: 40px;
+    display: block;
+    border: none;
+    width: 100%;
+}
+
+#main-body input:focus {
+    border: none;
+    outline: none;
+}
+
+#main-body textarea {
+    display: block;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    padding: 10px;
+    font-family: sans-serif;
+    border-radius: 5px;
+    max-width: 1000px;
+    line-height: 1.5rem;
+    scrollbar-width: none;
+}
+
+#main-body textarea:focus {
+    border: 1px solid #eee;
+    box-shadow: 4px 5pX 20px #eee;
+    outline: none;
+}
+
+#main-body p {
+    margin-top: 0;
+    padding-left: 10px;
+    color: #888;
+    font-family: monospace;
+    font-size: large;
+}
+
+.textarea-btn-container {
+    text-align: right;
+}
+
+#main-body button {
+    font-size: 16px;
+    padding: 4px 5px;
+    width: 80px;
+    font-weight: bold;
+    color: #222;
+}

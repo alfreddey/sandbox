@@ -1,0 +1,96 @@
+.budget-tracker {
+    border-collapse: collapse;
+    min-width: 750px;
+    margin: 0 auto;
+}
+
+.budget-tracker * {
+    font-family: sans-serif;
+}
+
+.budget-tracker th {
+    text-align: center;
+    /* padding: 10px 20px; */
+    border-bottom: 2px solid #1877f2;
+    color: white;
+    padding: 20px;
+}
+
+.budget-tracker td {
+    /* padding: 5px; */
+    padding: 20px;
+}
+
+.input,
+.delete-entry {
+    height: 30px;
+    font-size: 13px;
+    padding: 0 10px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background-color: lightblue;
+}
+
+.input-amount {
+    text-align: right;
+    font-size: 15px;
+}
+
+.input:focus {
+    border: 1px solid #bbb;
+}
+
+.delete-entry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    background: none;
+    color: red;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete-entry:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.controls,
+.summary {
+    text-align: right;
+    color: white;
+}
+
+.new-entry {
+    padding: 8px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid transparent;
+    /* box-shadow: 0 0 5px #ddd; */
+    letter-spacing: .03rem;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #1db954;
+    color: white;
+    font-weight: bold;
+}
+
+.entries tr {
+    border-bottom: 1px solid #bbb;
+}
+
+.entries td {
+    
+}
+
+body {
+    background-color: rgb(32, 33, 36);
+}

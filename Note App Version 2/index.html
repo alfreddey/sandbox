@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <article>
+        <aside id="sidebar">
+            <div class="slot-container">
+                <span class="note-heading">
+                    Notes Store
+                    <button id="writeBtn">&#9998;</button>
+                </span>
+                <div class="note-slot" style="display: none;">
+                    <div class="header">
+                        <span id="key">#0</span>
+                        <button id="deleteBtn">&#9760;</button>
+                    </div>
+                    <hr>
+                    <span id="topic">Topic</span>
+                </div>
+            </div>
+            <div class="slot-footer">
+                <button id="resetBtn">Reset</button>
+            </div>
+        </aside>
+        <main id="main-body">
+            <input id="caption" type="text" placeholder="Title" autocomplete="off">
+            <p id="date">DD/MM/YY</p>
+            <div class="textarea-btn-container">
+                <textarea name="note" id="note" cols="100" rows="18" spellcheck="false"></textarea>
+                <br>
+                <button id="addBtn">Add</button>
+            </div>
+        </main>
+    </article>
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>
+
+<!-- Run this with a live server to prevent CORS error-->
