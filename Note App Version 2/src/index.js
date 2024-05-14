@@ -1,5 +1,5 @@
 // Experimenting with module-level programming
-// and OOP design patterns, specifically, SinglePattern
+// and OOP design patterns, specifically, SingletonPattern
 
 import Collections from "./Collections.js";
 
